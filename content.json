@@ -1,0 +1,160 @@
+{
+  "personal": {
+    "name": "Fitz Maro",
+    "title": "Head of North America Design Technology",
+    "company": "Amazon's Brand Innovation Lab",
+    "tagline": "I build innovative teams, products, and experiences.",
+    "bio": "Globally recognized Creative Technology leader with 12+ years of experience in agencies and top tech companies. Builder of innovative brands, teams, products, and partnerships.",
+    "extendedBio": "I do my best work with folks that are smart, hard-working, and collaborative by nature. Tech mindset. Management skillset. Passionate about Creativity and AI.",
+    "currentRole": "Building the most innovative, technically complex solutions for Amazon and our biggest partners. Overseeing a team of 13 Design Technologists to crush our goals.",
+    "phone": "856-524-5336",
+    "email": "fitzmaro@gmail.com",
+    "linkedin": "https://linkedin.com/in/fitzmaro",
+    "twitter": "@FitzMaro",
+    "instagram": "@FitzMaro",
+    "profileImage": "https://static.wixstatic.com/media/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg/v1/fill/w_400,h_400,al_c/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg"
+  },
+  "awards": [
+    {
+      "name": "Cannes Lions",
+      "achievements": "1x Grand Prix, 1x Gold, 3x Silver, 2x Bronze, 12x Shortlist"
+    },
+    {
+      "name": "Clios",
+      "achievements": "4x Silver, 3x Bronze, 1x Shortlist"
+    },
+    {
+      "name": "Effies",
+      "achievements": "1x Gold, 1x Bronze"
+    },
+    {
+      "name": "One Show",
+      "achievements": "1x Gold, 1x Silver, 1x Bronze"
+    },
+    {
+      "name": "AdWeek Project Isaac Innovation",
+      "achievements": "Gold Winner"
+    },
+    {
+      "name": "D&AD",
+      "achievements": "1x Bronze, 1x Shortlist"
+    },
+    {
+      "name": "iab.MIXX Interactive",
+      "achievements": "Silver, Shortlist"
+    },
+    {
+      "name": "Shorty Awards",
+      "achievements": "1x Silver, 2x Finalist"
+    },
+    {
+      "name": "CreativePool",
+      "achievements": "Winner / Gold"
+    },
+    {
+      "name": "The Internationalist",
+      "achievements": "Gold+ in Ecommerce"
+    },
+    {
+      "name": "ARF Ogilvy Awards",
+      "achievements": "Grand Ogilvy Winner"
+    }
+  ],
+  "recognition": [
+    "AdWeek 'Creative You Should Know'",
+    "MediaPost 'Young Innovator'",
+    "Campaign US 'Media Stars'",
+    "Adweek 'Fearless Thinker'"
+  ],
+  "portfolio": [
+    {
+      "id": "westworld-maze",
+      "title": "HBO Westworld \"The Maze\"",
+      "client": "HBO",
+      "vimeoId": "349092003",
+      "description": "An Alexa AI-powered game, \"The Maze\" uses the show's entire sound library to bring the park to life in your living room.",
+      "awards": ["Cannes Grand Prix, Audio/Radio", "Cannes Gold Lion, Experience Design", "Webby Award, People's Choice"],
+      "thumbnail": "https://i.vimeocdn.com/video/799930263-c79ab89ba77a7567803a8d0ade2aa405bf6ee9cbc744171840116279a24c9a23-d_640"
+    },
+    {
+      "id": "canon-photo-tips",
+      "title": "Canon Real Time Photo Tips",
+      "client": "Canon",
+      "vimeoId": "162856010",
+      "description": "Using real time API data to help NYC photographers capture perfect photos. Digital billboards at the most photographed landmarks served contextual tips based on light, weather, time, and conditions.",
+      "awards": ["Cannes Bronze Lion, Outdoor", "Cannes Shortlist, Cyber"],
+      "press": ["Creativity Online", "AdWeek", "Advertising Age", "MediaPost", "PetaPixel"],
+      "thumbnail": "https://i.vimeocdn.com/video/565570508-b0ec061fa5a3d486499d786cbff5724c392d9d737dc1c47e710d0cf8a6c537f9-d_640"
+    },
+    {
+      "id": "target-treatster",
+      "title": "Target Treatster",
+      "client": "Target",
+      "vimeoId": "156875309",
+      "description": "The first crowd-sourced social network for trick-or-treating to help little monsters make the most of their precious candy-seeking time. Including custom 3D printed jack-o-lanterns with GPS and voting capabilities.",
+      "awards": ["Cannes Silver Lion, Cyber", "Clios 4x Silver, 4x Bronze"],
+      "press": ["Forbes", "Creativity Online", "AdWeek", "AdAge", "TIME"],
+      "thumbnail": "https://i.vimeocdn.com/video/558009830-afb12ec48896056b2429d9daf4620a52dbc7e00f31cbee6f43b9e312536fe674-d_640"
+    },
+    {
+      "id": "lean-cuisine-diet-filter",
+      "title": "#WeighThis Diet Filter",
+      "client": "Lean Cuisine",
+      "vimeoId": "153539907",
+      "description": "Unseating \"diet\" as the New Year's most popular word with a custom-built TV hack that mutes the word 'diet', plus a matching Chrome extension. For every filtered word, Lean Cuisine donated to Girls Leadership.",
+      "awards": ["Cannes Silver, Branded Content", "Effie Gold", "One Show Gold"],
+      "press": ["Wall Street Journal", "Adweek", "AdAge", "Mashable", "Creativity", "MediaPost", "Refinery29"],
+      "thumbnail": "https://i.vimeocdn.com/video/553852190-aa6c849b7417e292200350db79b6fa7f17ac3336024188df7965068c6bee70ea-d_640"
+    },
+    {
+      "id": "jameson-bar",
+      "title": "The Jameson Bar",
+      "client": "Jameson",
+      "vimeoId": null,
+      "description": "First of its kind voice experience on the Google Home smart speaker, giving authentic Irish toasts for dozens of occasions, cocktail recipes too.",
+      "awards": ["Cannes Bronze, Audio/Radio"],
+      "thumbnail": null
+    },
+    {
+      "id": "reeve-foundation",
+      "title": "Accessible Play",
+      "client": "Christopher & Dana Reeve Foundation",
+      "vimeoId": null,
+      "description": "In partnership with Axios: Innovative accessible toys that help people living with paralysis play with their children.",
+      "awards": [],
+      "thumbnail": null
+    },
+    {
+      "id": "pinterest-innovation",
+      "title": "Pinterest Pin Extension Ad Unit",
+      "client": "Pinterest",
+      "vimeoId": null,
+      "description": "Creator of the Pin Extension Ad Unit. Led development of multi-day Advertiser Innovation Workshop that resulted in multiple award-winning campaigns, millions in media dollars, and countless press features. Earning $500M+ in revenue since launch.",
+      "awards": ["AdWeek Project Isaac Innovation Winner"],
+      "stats": "4.3 Star Rating from 75+ reviews",
+      "thumbnail": null
+    }
+  ],
+  "experience": [
+    {
+      "period": "2022-Present",
+      "role": "Head of North America Design Technology",
+      "company": "Amazon Brand Innovation Lab"
+    },
+    {
+      "period": "2019-2022",
+      "role": "Innovation Lead / Sales & Creative Strategy XFN Lead",
+      "company": "Pinterest"
+    },
+    {
+      "period": "2015-2019",
+      "role": "Innovation Lead",
+      "company": "360i"
+    }
+  ],
+  "resumeLink": "https://www.dropbox.com/scl/fi/j9e33vuhp9iht29j5almc/Fitz-Maro-Cannes-Academy-2024.pdf?dl=0&rlkey=9ug1dqwettcfdt45dq5z1ohtn",
+  "images": {
+    "profile": "https://static.wixstatic.com/media/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg",
+    "hero": "https://static.wixstatic.com/media/ae6448_7d2b70459a3e403f82693afc71a25a68f000.jpg"
+  }
+}
