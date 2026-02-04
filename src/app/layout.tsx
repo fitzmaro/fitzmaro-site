@@ -1,31 +1,41 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Syne, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const syne = Syne({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const instrumentSans = Instrument_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Fitz Maro | Head of Design Technology @ Amazon",
+  title: "Fitz Maro | AI & Creative Technology Leader",
   description:
-    "Head of North America Design Technology at Amazon's Brand Innovation Lab. Globally recognized Creative Technology leader with 12+ years of experience. Builder of innovative brands, teams, products, and partnerships.",
+    "Fitz Maro is a Creative Technology leader with 13+ years experience driving AI transformation at Amazon, Pinterest, and top agencies. Speaker, award-winner, team builder.",
   keywords: [
     "Fitz Maro",
-    "Design Technology",
+    "AI Leader",
     "Creative Technology",
+    "Design Technology",
     "Amazon",
     "Brand Innovation Lab",
-    "Innovation",
+    "AI Enablement",
     "Creative Director",
+    "Speaker",
   ],
   authors: [{ name: "Fitz Maro" }],
   openGraph: {
-    title: "Fitz Maro | Head of Design Technology @ Amazon",
+    title: "Fitz Maro | AI & Creative Technology Leader",
     description:
-      "Globally recognized Creative Technology leader. Builder of innovative brands, teams, products, and experiences.",
+      "Creative Technology leader with 13+ years experience driving AI transformation at Amazon, Pinterest, and top agencies. Speaker, award-winner, team builder.",
     url: "https://fitzmaro.com",
     siteName: "Fitz Maro",
     locale: "en_US",
@@ -33,10 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fitz Maro | Head of Design Technology @ Amazon",
+    title: "Fitz Maro | AI & Creative Technology Leader",
     description:
-      "Globally recognized Creative Technology leader. Builder of innovative brands, teams, products, and experiences.",
-    creator: "@FitzMaro",
+      "Creative Technology leader driving AI transformation at Amazon. Speaker, award-winner, team builder.",
   },
   robots: {
     index: true,
@@ -50,27 +59,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function getTheme() {
-                  const stored = localStorage.getItem('theme');
-                  if (stored) return stored;
-                  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                }
-                const theme = getTheme();
-                if (theme === 'light') {
-                  document.documentElement.setAttribute('data-theme', 'light');
-                }
-              })();
-            `,
-          }}
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css"
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${syne.variable} ${instrumentSans.variable} antialiased`}>
+        {/* Noise texture overlay */}
+        <div className="noise-overlay" />
+
+        {/* Glow spots */}
+        <div
+          className="glow-spot animate-pulse-glow fixed"
+          style={{ top: '-20%', right: '-10%' }}
+        />
+        <div
+          className="glow-spot glow-spot-secondary animate-pulse-glow fixed"
+          style={{ bottom: '-20%', left: '-10%', animationDelay: '2s' }}
+        />
+
         {children}
       </body>
     </html>

@@ -1,75 +1,59 @@
 @import "tailwindcss";
 
-/* withhoney.com inspired - Dark-first, high contrast, red accent */
+/* Light theme - coral/red accent */
 :root {
-  /* Dark mode (default) */
-  --background: #000000;
-  --background-secondary: #0a0a0a;
-  --background-elevated: #111111;
-  --foreground: #ffffff;
-  --foreground-muted: #888888;
-  --foreground-subtle: #555555;
-
-  /* Accent - coral/red like withhoney */
-  --accent: #f44849;
-  --accent-hover: #ff6b6b;
-  --accent-muted: rgba(244, 72, 73, 0.15);
-
-  /* UI */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --card-bg: #0a0a0a;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.06);
-}
-
-[data-theme="light"] {
+  /* Light mode colors */
   --background: #ffffff;
   --background-secondary: #fafafa;
   --background-elevated: #f5f5f5;
-  --foreground: #000000;
-  --foreground-muted: #666666;
-  --foreground-subtle: #999999;
+  --surface: #f8f8f8;
+  --surface2: #f0f0f0;
 
-  --border: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.15);
+  /* Text colors */
+  --foreground: #171717;
+  --foreground-muted: #525252;
+  --foreground-subtle: #a3a3a3;
+
+  /* Accent - coral/red */
+  --accent: #f44849;
+  --accent-hover: #ff6b6b;
+  --accent-light: #fff1f1;
+  --accent-muted: rgba(244, 72, 73, 0.1);
+
+  /* UI elements */
+  --border: #e5e5e5;
+  --border-hover: #d4d4d4;
   --card-bg: #ffffff;
-  --glass: rgba(0, 0, 0, 0.02);
+  --glass: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.05);
-}
 
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --background: #ffffff;
-    --background-secondary: #fafafa;
-    --background-elevated: #f5f5f5;
-    --foreground: #000000;
-    --foreground-muted: #666666;
-    --foreground-subtle: #999999;
-
-    --border: rgba(0, 0, 0, 0.08);
-    --border-hover: rgba(0, 0, 0, 0.15);
-    --card-bg: #ffffff;
-    --glass: rgba(0, 0, 0, 0.02);
-    --glass-border: rgba(0, 0, 0, 0.05);
-  }
+  /* Glow effects for light theme */
+  --glow-color: rgba(244, 72, 73, 0.08);
+  --glow-secondary: rgba(244, 72, 73, 0.05);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
   --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
   --color-foreground-subtle: var(--foreground-subtle);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
   --color-accent-muted: var(--accent-muted);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
   --color-card-bg: var(--card-bg);
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
+
+  /* Font families */
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Instrument Sans', sans-serif;
 }
 
 * {
@@ -87,41 +71,135 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* All typography is sans-serif for this design */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  font-weight: 600;
+/* Display font for headings */
+h1, h2, h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
-/* Smooth theme transitions */
-*, *::before, *::after {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+h4, h5, h6 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 600;
 }
 
-/* Video container */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  background: var(--background-secondary);
+/* Glassmorphism navigation */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.video-container iframe {
+/* Glow spots - adapted for light theme */
+.glow-spot {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Custom scrollbar - minimal */
+.glow-spot-secondary {
+  background: radial-gradient(circle, var(--glow-secondary) 0%, transparent 70%);
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 50;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--foreground-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Accent text gradient */
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff8f70 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Stagger delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -151,61 +229,14 @@ h1, h2, h3, h4, h5, h6 {
   outline-offset: 2px;
 }
 
-/* Glassmorphism effect */
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--foreground-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Accent gradient */
-.accent-gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, #ff8f70 100%);
-}
-
-/* Glow effect */
-.glow {
-  box-shadow: 0 0 40px rgba(244, 72, 73, 0.15);
-}
-
-/* Fade in animation */
-@keyframes fadeIn {
-  from {
+/* Status indicator ping */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
     opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-/* Stagger animations */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
-
-/* Hover lift */
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }

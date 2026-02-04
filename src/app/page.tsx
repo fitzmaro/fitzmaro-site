@@ -1,7 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import About from "@/components/About";
-import Portfolio from "@/components/Portfolio";
+import Career from "@/components/Career";
 import Awards from "@/components/Awards";
 import Footer from "@/components/Footer";
 
@@ -11,8 +12,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <About />
-        <Portfolio />
+        <Career />
         <Awards />
       </main>
       <Footer />
