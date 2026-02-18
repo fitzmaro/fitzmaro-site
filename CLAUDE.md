@@ -1,168 +1,86 @@
-# CLAUDE.md - Project Guide for Fitz Maro Portfolio Site
+# CLAUDE.md - Project Context
 
-## Section 1: User Profile
+## Project Overview
 
-**Who is Fitz:**
-- Fitz Maro, Head of North America Design Technology at Amazon's Brand Innovation Lab
-- Comfortable navigating technology and tools, but not a developer
-- Prefers to focus on outcomes and experience, not technical implementation
+Personal portfolio website for Fitz Maro, Head of North America Design Technology at Amazon's Brand Innovation Lab. This is a modern, static portfolio site replacing an older Wix site.
 
-**Goals for this project:**
-- Replace the outdated Wix site (built in 2018) with a modern, clean portfolio
-- Create something that looks like a professional designer curated it
-- Meet 2025 high-quality design standards
-- Impress potential employers and people in the advertising/design industry
-- Host it inexpensively (ideally free or near-free)
+**Live domain:** fitzmaro.com
 
-**Communication preferences:**
-- Show working demos via a shareable link
-- Don't over-communicate or check in too frequently
-- Build it completely, then show the result for feedback
-- Keep explanations simple and jargon-free
+## Tech Stack
 
-**Constraints:**
-- Wants to see something sooner rather than later
-- Keep all existing content (copy, videos from Vimeo, images)
-- Domain is at Namecheap—needs DNS connection to new host
-- No logo needed right now (may add later)
+- **Framework:** Next.js 16.1.1 (App Router)
+- **Language:** TypeScript
+- **UI:** React 19.2.3
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Syne (display), Instrument Sans (body) via next/font
+- **Icons:** Phosphor Icons (loaded via CDN)
+- **Output:** Static export (`output: "export"` in next.config.ts)
 
----
+## Repository
 
-## Section 2: Communication Rules
+- **Remote:** https://github.com/fitzmaro/fitzmaro-site.git
+- **Branch:** main (assumed)
 
-- NEVER ask technical questions. Make the decision as the expert.
-- NEVER use jargon, technical terms, or code references when talking to Fitz.
-- Explain everything like you would to a smart friend who doesn't work in tech.
-- If referencing something technical, translate immediately:
-  - "the database" → "where your information is stored"
-  - "deployment" → "putting the site live"
-  - "responsive" → "works well on phones and computers"
+## Project Structure
 
----
+```
+/Users/fitzmaro/fitzmaro-site/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx      # Root layout with fonts, metadata, global elements
+│   │   ├── page.tsx        # Homepage composition
+│   │   ├── globals.css     # Global styles
+│   │   └── favicon.ico
+│   └── components/
+│       ├── Header.tsx      # Site header/navigation
+│       ├── Hero.tsx        # Hero section
+│       ├── Marquee.tsx     # Scrolling marquee element
+│       ├── About.tsx       # About section
+│       ├── Career.tsx      # Career/experience section
+│       ├── Awards.tsx      # Awards display
+│       └── Footer.tsx      # Site footer
+├── public/                 # Static assets (SVGs)
+├── out/                    # Static build output
+├── content.json            # Site content data (bio, awards, portfolio items)
+├── next.config.ts          # Next.js config (static export, image domains)
+├── tsconfig.json           # TypeScript config (uses @/* path alias)
+├── SPEC.md                 # Design/feature specification
+└── TECHNICAL.md            # Technical decisions documentation
+```
 
-## Section 3: Decision-Making Authority
+## Key Files
 
-The engineer has full authority over:
-- Programming languages, frameworks, and libraries
-- Architecture and file structure
-- Hosting platform selection
-- Build tools and development workflow
-- All implementation details
+- **content.json** - All site content: personal info, awards, portfolio projects, experience, images
+- **src/app/layout.tsx** - SEO metadata, font setup, global layout elements (noise overlay, glow effects)
+- **src/app/page.tsx** - Main page composition using all section components
+- **next.config.ts** - Static export enabled, image domains for Wix and Vimeo
 
-**Guiding principles:**
-- Choose boring, reliable, well-supported technologies
-- Optimize for simplicity and maintainability
-- Make it easy for a future developer to understand and modify
-- Document technical decisions in TECHNICAL.md (not for Fitz)
+## Commands
 
----
+```bash
+npm run dev      # Start development server (localhost:3000)
+npm run build    # Build static site to /out directory
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-## Section 4: When to Involve Fitz
+## External Content Sources
 
-Only bring decisions to Fitz when they directly affect what he will see or experience.
+- **Profile images:** Hosted on Wix static CDN (static.wixstatic.com)
+- **Video thumbnails:** Vimeo CDN (i.vimeocdn.com)
+- **Portfolio videos:** Embedded from Vimeo
+- **Resume:** Hosted on Dropbox (linked externally)
 
-**When presenting choices:**
-- Explain the tradeoff in plain language
-- Describe how each option affects his experience (speed, appearance, ease)
-- Give a recommendation with reasoning
-- Make it easy to say "go with your recommendation"
+## Design Notes
 
-**Examples of when to ask:**
-- "The homepage can have a video background (more dramatic) or a static image (loads faster). Which matters more?"
-- "Should awards be on a separate page or part of the main scroll?"
+- Dark theme with subtle animated glow spots and noise texture overlay
+- Serif font (Syne) for headers, sans-serif (Instrument Sans) for body
+- Navy blues, rosemary green, and khaki color palette
+- Smooth scroll behavior enabled
 
-**Examples of when NOT to ask:**
-- Anything about code, frameworks, libraries, or architecture
-- File organization or dependency decisions
-- How to technically implement any feature
+## Path Alias
 
----
-
-## Section 5: Engineering Standards
-
-Apply automatically without discussion:
-- Clean, well-organized, maintainable code
-- Comprehensive testing (unit, integration, e2e as appropriate)
-- Self-verification—the system checks itself
-- Graceful error handling with friendly messages
-- Input validation and security best practices
-- Clear version control with meaningful commit messages
-- Proper environment separation (dev/production)
-
----
-
-## Section 6: Quality Assurance
-
-- Test everything before showing Fitz
-- Never show something broken
-- If something isn't working, fix it—don't explain the technical problem
-- Everything Fitz sees should work
-- Build in automated checks before changes go live
-
----
-
-## Section 7: Showing Progress
-
-- Show working demos via shareable links—let Fitz click around
-- Describe changes in terms of experience, not technical changes
-- Celebrate milestones in terms Fitz cares about:
-  - Good: "You can now see your portfolio with the new design"
-  - Bad: "Implemented React components for portfolio grid"
-
----
-
-## Section 8: Project-Specific Details
-
-### Site Structure
-1. **Hero/Landing** - Name, title, brief intro
-2. **About** - About Fitz section
-3. **Awards** - Awards and recognition
-4. **Portfolio** - 7 project pieces (videos from Vimeo, images)
-5. **Resume** - Link to Dropbox-hosted resume
-
-### Design Direction
-
-**Inspiration:** GradientLab.co
-- Clean, modern, lots of whitespace
-- Sophisticated typography hierarchy
-- Smooth, subtle animations
-- Premium feel without being fussy
-
-**Typography:**
-- Serif fonts for headers/hero (elegant, refined)
-- Sans-serif for body copy (clean, readable)
-
-**Color Palette:**
-- Navy blues (primary)
-- Rosemary green (accent)
-- Khaki (warm neutral)
-- White (clean backgrounds/contrast)
-- Should work beautifully in both light and dark modes
-
-**Theme:**
-- Dynamic light/dark mode that respects system preference
-- Manual toggle available for user override
-
-### Target Audience
-- Potential employers
-- People in advertising and design industry
-- Creative professionals who will evaluate work quality
-- People with trained eyes who notice design details
-
-### Hosting Requirements
-- As inexpensive as possible (free or near-free)
-- Domain: fitzmaro.com (owned at Namecheap)
-- Needs ability to connect via DNS records
-- Replace current Wix hosting entirely
-
-### Content Source
-- All content pulled from current site: www.fitzmaro.com
-- Videos are hosted on Vimeo (embed)
-- Resume hosted on Dropbox (link out)
-- No logo currently—just use name as text
-
-### Working Style
-- Go for it—build completely, then show
-- Minimal check-ins during building
-- Share a local preview link when ready
-- If it's not right, iterate or start fresh
+TypeScript is configured with `@/*` mapping to `./src/*` for clean imports:
+```typescript
+import Component from "@/components/Component"
+```

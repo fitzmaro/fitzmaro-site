@@ -1,9 +1,80 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "career", label: "Career" },
+  { id: "awards", label: "Awards" },
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [pillStyle, setPillStyle] = useState({ left: 0, width: 0 });
+  const navRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+
+  // Update pill position when active section changes
+  useEffect(() => {
+    const activeEl = itemRefs.current.get(activeSection);
+    const navEl = navRef.current;
+    if (activeEl && navEl) {
+      const navRect = navEl.getBoundingClientRect();
+      const activeRect = activeEl.getBoundingClientRect();
+      setPillStyle({
+        left: activeRect.left - navRect.left,
+        width: activeRect.width,
+      });
+    }
+  }, [activeSection]);
+
+  // Intersection Observer to track visible section
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    navItems.forEach(({ id }) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Recalculate pill on resize
+  useEffect(() => {
+    const handleResize = () => {
+      const activeEl = itemRefs.current.get(activeSection);
+      const navEl = navRef.current;
+      if (activeEl && navEl) {
+        const navRect = navEl.getBoundingClientRect();
+        const activeRect = activeEl.getBoundingClientRect();
+        setPillStyle({
+          left: activeRect.left - navRect.left,
+          width: activeRect.width,
+        });
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    // Initial calculation after mount
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [activeSection]);
 
   return (
     <nav className="fixed top-0 w-full z-40 glass-nav transition-all duration-300">
@@ -24,31 +95,35 @@ export default function Header() {
         </a>
 
         {/* Navigation Pills - Desktop */}
-        <div className="hidden md:flex items-center gap-1 bg-[var(--surface2)]/50 p-1.5 rounded-full border border-[var(--border)] backdrop-blur-md">
-          <a
-            href="#home"
-            className="px-5 py-2 text-sm font-medium text-[var(--foreground)] bg-[var(--background)] rounded-full shadow-sm border border-[var(--border)]/50"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="px-5 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#career"
-            className="px-5 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
-          >
-            Career
-          </a>
-          <a
-            href="#awards"
-            className="px-5 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--foreground)] transition-colors"
-          >
-            Awards
-          </a>
+        <div
+          ref={navRef}
+          className="hidden md:flex items-center gap-1 bg-[var(--surface2)]/50 p-1.5 rounded-full border border-[var(--border)] backdrop-blur-md relative"
+        >
+          {/* Sliding pill indicator */}
+          <div
+            className="absolute top-1.5 bottom-1.5 bg-[var(--background)] rounded-full shadow-sm border border-[var(--border)]/50 transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+            style={{
+              left: pillStyle.left,
+              width: pillStyle.width,
+              transform: "translateZ(0)",
+            }}
+          />
+          {navItems.map(({ id, label }) => (
+            <a
+              key={id}
+              ref={(el) => {
+                if (el) itemRefs.current.set(id, el);
+              }}
+              href={`#${id}`}
+              className={`relative z-10 px-5 py-2 text-sm font-medium transition-colors duration-300 ${
+                activeSection === id
+                  ? "text-[var(--foreground)]"
+                  : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
+              }`}
+            >
+              {label}
+            </a>
+          ))}
         </div>
 
         {/* Right Side */}
@@ -86,34 +161,20 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[var(--background)] border-t border-[var(--border)]">
           <div className="px-6 py-4 space-y-2">
-            <a
-              href="#home"
-              className="block px-4 py-3 text-[var(--foreground)] font-medium rounded-lg hover:bg-[var(--surface)] transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="block px-4 py-3 text-[var(--foreground-muted)] font-medium rounded-lg hover:bg-[var(--surface)] hover:text-[var(--foreground)] transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </a>
-            <a
-              href="#career"
-              className="block px-4 py-3 text-[var(--foreground-muted)] font-medium rounded-lg hover:bg-[var(--surface)] hover:text-[var(--foreground)] transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Career
-            </a>
-            <a
-              href="#awards"
-              className="block px-4 py-3 text-[var(--foreground-muted)] font-medium rounded-lg hover:bg-[var(--surface)] hover:text-[var(--foreground)] transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Awards
-            </a>
+            {navItems.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className={`block px-4 py-3 font-medium rounded-lg transition-colors ${
+                  activeSection === id
+                    ? "text-[var(--foreground)] bg-[var(--surface)]"
+                    : "text-[var(--foreground-muted)] hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
             <div className="pt-2 border-t border-[var(--border)]">
               <div className="flex items-center gap-2 px-4 py-2 text-sm text-[var(--foreground-subtle)]">
                 <span className="relative flex h-2 w-2">
