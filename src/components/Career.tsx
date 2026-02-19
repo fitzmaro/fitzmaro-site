@@ -1,30 +1,40 @@
 export default function Career() {
   const experience = [
     {
-      period: "2022 — 2025",
+      period: "2022 — Present",
       role: "Head of North America, Design Technology",
       company: "Amazon Brand Innovation Lab",
       location: "NYC, Hybrid",
       icon: "ph-package",
       highlights: [
-        "Managing 13 Design Technologists across US, Canada, Mexico, Brazil",
-        "Spearheading Amazon Ads' largest AI initiatives since 2022",
-        "Led AI enablement: trained 50+ creatives, 25+ developers globally",
-        "Delivered executive briefings on AI strategy; set 30%+ productivity goals",
-        "Developed Figma AI plugin bringing AI into creative workflows",
-        "Led client workshops for Fortune 500 brands across CPG, entertainment, tech",
+        "Lead 13 Design Technologists across US, Canada, Mexico, Brazil",
+        "Translate platform capabilities into stories for enterprise clients",
+        "Build messaging frameworks for launches, coordinate across sales/marketing/product",
+        "Run client workshops for Fortune 500 brands: CPG, entertainment, tech",
       ],
     },
     {
-      period: "2019 — 2022",
+      period: "2021 — 2022",
+      role: "Web3 Marketing Consultant",
+      company: "Marinade.Finance",
+      location: "Remote",
+      icon: "ph-cube",
+      highlights: [
+        "Led marketing for top 3 DeFi protocol on Solana",
+        "Grew Twitter following 5x in 6 months",
+        "Managed Discord community of 20,000+ members",
+      ],
+    },
+    {
+      period: "2018 — 2022",
       role: "Global Creative Technology Lead",
       company: "Pinterest",
       location: "NYC → Remote",
       icon: "ph-push-pin",
       highlights: [
+        "Built Pin Extensions from scratch: $750M+ revenue to date",
         "Led first-ever AR, VR, 360°, and WebGL campaign innovations",
-        "Created Pinterest's Pin Extension ad format: $5M first year, $550M+ to date",
-        "Led Global Sales Solutions Team, aligning Product Engineering with Marketing",
+        "Connective tissue between Product Engineering and Sales/Marketing",
       ],
     },
     {
@@ -34,16 +44,16 @@ export default function Career() {
       location: "NYC",
       icon: "ph-lightbulb",
       highlights: [
-        "Co-founder of 360i Innovation Lab",
-        "Named AdAge \"Creative You Should Know\" (Cannes edition)",
-        "Built expertise translating technical concepts for non-technical audiences",
-        "Earned dozens of industry awards",
+        "Co-founded 360i Innovation Lab",
+        "Shipped AI voice game that won Cannes Grand Prix (Westworld: The Maze)",
+        "Named AdAge \"Creative You Should Know\" at Cannes",
+        "Learned to make complex technology feel simple",
       ],
       previousRoles: "Previous: Associate Brand Strategist → Innovation Strategist → Senior Innovation Strategist",
     },
     {
       period: "2012",
-      role: "Strategy Intern",
+      role: "Brand Strategy",
       company: "Goodby, Silverstein & Partners",
       location: "San Francisco",
       icon: "ph-brain",
@@ -79,8 +89,8 @@ export default function Career() {
             Career
           </span>
           <h2 className="text-4xl md:text-5xl text-[var(--foreground)]" style={{ fontFamily: 'var(--font-display)' }}>
-            Experience &{" "}
-            <span className="text-[var(--foreground-subtle)]">Education</span>
+            Where I&apos;ve Built{" "}
+            <span className="text-[var(--foreground-subtle)]">Bridges</span>
           </h2>
         </div>
 

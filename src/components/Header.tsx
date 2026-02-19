@@ -128,15 +128,6 @@ export default function Header() {
 
         {/* Right Side */}
         <div className="flex items-center gap-4">
-          {/* Status Indicator - Desktop */}
-          <div className="hidden lg:flex items-center gap-2 text-xs font-medium text-[var(--foreground-subtle)] px-3 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)]">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            Available for Speaking
-          </div>
-
           {/* CTA Button */}
           <a
             href="#contact"
@@ -176,16 +167,9 @@ export default function Header() {
               </a>
             ))}
             <div className="pt-2 border-t border-[var(--border)]">
-              <div className="flex items-center gap-2 px-4 py-2 text-sm text-[var(--foreground-subtle)]">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                Available for Speaking
-              </div>
               <a
                 href="#contact"
-                className="block mt-2 px-4 py-3 bg-[var(--foreground)] text-[var(--background)] text-center font-bold rounded-lg"
+                className="block px-4 py-3 bg-[var(--foreground)] text-[var(--background)] text-center font-bold rounded-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Let&apos;s Talk

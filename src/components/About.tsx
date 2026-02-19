@@ -1,9 +1,9 @@
 export default function About() {
   const skills = [
-    "AI Enablement",
+    "Technical Translation",
     "Team Leadership",
     "Cross-functional",
-    "Technical Training",
+    "Product Storytelling",
   ];
 
   const speakingCredits = [
@@ -14,16 +14,16 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 relative">
+    <section id="about" className="pt-16 pb-32 relative">
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl text-[var(--foreground)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-              Built for Impact.
+              The Bridge Builder.
             </h2>
             <p className="text-[var(--foreground-muted)] max-w-lg text-lg">
-              Operating at the intersection of design, code, and AI strategy to build resilient teams and products.
+              13 years translating between engineers, creatives, sales, and C-suite. Making complex things simple.
             </p>
           </div>
           <a
@@ -46,9 +46,9 @@ export default function About() {
                 <i className="ph-duotone ph-fingerprint text-3xl"></i>
               </div>
               <h3 className="text-2xl lg:text-3xl font-medium text-[var(--foreground)] mb-6 leading-normal">
-                &ldquo;I don&apos;t just manage teams—I translate. My role is bridging the gap between{" "}
-                <span className="text-[var(--accent)]">creative vision</span> and{" "}
-                <span className="text-[var(--accent)]">AI-powered engineering</span>, acting as translator, facilitator, and diplomat.&rdquo;
+                &ldquo;I&apos;ve spent my whole career being hard to categorize. Not an engineer, but I can talk MCPs and frontier models, and I&apos;ve vibe coded many projects. Not a designer, but I illustrated and published a children&apos;s book. Not a salesperson, but I&apos;ve pitched and sold to hundreds of major brand execs. I&apos;m a{" "}
+                <span className="text-[var(--accent)]">Swiss Army knife</span>. At times, that&apos;s felt like a liability. But in today&apos;s world of{" "}
+                <span className="text-[var(--accent)]">AI</span>, it&apos;s the greatest superpower I can imagine.&rdquo;
               </h3>
             </div>
             <div className="relative z-10 flex flex-wrap gap-3 mt-8">
@@ -63,7 +63,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* AI Impact Stat Card */}
+          {/* Revenue Impact Stat Card */}
           <div className="md:col-span-3 lg:col-span-4 bg-[var(--accent)] text-white rounded-3xl p-8 flex flex-col justify-between card-hover relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl translate-x-1/2 -translate-y-1/2"></div>
             <div className="flex justify-between items-start">
@@ -71,8 +71,8 @@ export default function About() {
               <i className="ph-bold ph-arrow-up-right text-2xl opacity-50"></i>
             </div>
             <div>
-              <p className="text-5xl font-bold mb-1" style={{ fontFamily: 'var(--font-display)' }}>90%+</p>
-              <p className="text-white/80 text-sm font-medium">Developer AI Adoption Rate</p>
+              <p className="text-5xl font-bold mb-1" style={{ fontFamily: 'var(--font-display)' }}>$750M+</p>
+              <p className="text-white/80 text-sm font-medium">Revenue from Products I Built</p>
             </div>
           </div>
 

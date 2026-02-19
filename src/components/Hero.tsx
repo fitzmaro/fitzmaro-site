@@ -9,20 +9,20 @@ export default function Hero() {
           <div>
             {/* Tag */}
             <span className="inline-block py-1 px-3 rounded border border-[var(--accent)]/20 bg-[var(--accent)]/5 text-[var(--accent)] text-xs font-mono mb-6 tracking-wider opacity-0 animate-fade-in">
-              // AI &amp; CREATIVE TECHNOLOGY LEADER
+              // THE DIPLOMAT
             </span>
 
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[0.9] tracking-tight mb-6 opacity-0 animate-fade-in stagger-1" style={{ fontFamily: 'var(--font-display)' }}>
-              Leading the<br />
-              <span className="text-gradient-accent">AI Revolution</span><br />
-              in Creative Tech.
+              Fluent in tech.<br />
+              Fluent in people.<br />
+              <span className="text-gradient-accent">I make them click.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[var(--foreground-muted)] max-w-xl leading-relaxed font-light opacity-0 animate-fade-in stagger-2">
-              I build high-performance teams at the intersection of design, engineering, and AI strategy. Currently driving AI transformation at{" "}
-              <strong className="text-[var(--foreground)] font-medium">Amazon</strong>.
+              I speak engineer, creative, sales, and C-suite. Then I build the bridge. Currently: Head of North America, Design Technology @{" "}
+              <strong className="text-[var(--foreground)] font-medium">Amazon</strong>
             </p>
           </div>
 
@@ -49,18 +49,18 @@ export default function Hero() {
           {/* Stats */}
           <div className="pt-8 flex flex-wrap items-center gap-8 border-t border-[var(--border)]/50 mt-4 opacity-0 animate-fade-in stagger-4">
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-[var(--foreground)]" style={{ fontFamily: 'var(--font-display)' }}>13+</span>
+              <span className="text-3xl font-bold text-[var(--accent)]" style={{ fontFamily: 'var(--font-display)' }}>13+</span>
               <span className="text-xs text-[var(--foreground-subtle)] uppercase tracking-wider">Years Exp.</span>
             </div>
             <div className="w-px h-10 bg-[var(--border)]/50 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-[var(--foreground)]" style={{ fontFamily: 'var(--font-display)' }}>$550M+</span>
+              <span className="text-3xl font-bold text-[var(--accent)]" style={{ fontFamily: 'var(--font-display)' }}>$750M+</span>
               <span className="text-xs text-[var(--foreground-subtle)] uppercase tracking-wider">Revenue Impact</span>
             </div>
             <div className="w-px h-10 bg-[var(--border)]/50 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-3xl font-bold text-[var(--foreground)]" style={{ fontFamily: 'var(--font-display)' }}>50+</span>
-              <span className="text-xs text-[var(--foreground-subtle)] uppercase tracking-wider">Creatives Trained</span>
+              <span className="text-3xl font-bold text-[var(--accent)]" style={{ fontFamily: 'var(--font-display)' }}>29</span>
+              <span className="text-xs text-[var(--foreground-subtle)] uppercase tracking-wider">Industry Awards</span>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Hero() {
                   Current Role
                 </p>
                 <p className="text-[var(--foreground)] font-bold text-lg leading-tight">
-                  Head of Design Tech
+                  Head of North America, Design Tech
                 </p>
                 <p className="text-[var(--foreground-muted)] text-xs mt-0.5">
                   Amazon Brand Innovation Lab

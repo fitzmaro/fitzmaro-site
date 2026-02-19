@@ -6,12 +6,12 @@ export default function Footer() {
           {/* Left Column */}
           <div>
             <h2 className="text-5xl md:text-7xl text-[var(--foreground)] mb-8 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
-              Let&apos;s build<br />
-              the future of AI<br />
-              in creative.
+              Let&apos;s talk<br />
+              about what<br />
+              you&apos;re building.
             </h2>
             <p className="text-[var(--foreground-muted)] text-lg max-w-md mb-12 leading-relaxed">
-              Whether you need a speaker for your next event, a leader for your design tech org, or a partner for an ambitious AI initiative.
+              I&apos;m always up for a conversation about AI, product, or how to get engineers and non-engineers in the same room agreeing on things.
             </p>
 
             {/* Contact Info */}
