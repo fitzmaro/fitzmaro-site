@@ -2,85 +2,68 @@
 
 ## Project Overview
 
-Personal portfolio website for Fitz Maro, Head of North America Design Technology at Amazon's Brand Innovation Lab. This is a modern, static portfolio site replacing an older Wix site.
+**Version 4** - Warm dark portfolio inspired by honglyoeng.com and adithyakrishnan.com. Sophisticated, editorial feel with warm cream text on near-black background.
 
-**Live domain:** fitzmaro.com
+## Design Philosophy
+
+- Near-black background (#0e0d0d), warm cream text (#e7e2de)
+- Warm orange accent (#e79641), deep maroon secondary (#b6372e)
+- Clean sans-serif typography: Inter (body) + Space Grotesk (headers)
+- Subtle glow effects and noise texture for depth
+- Generous whitespace, editorial layout
+- Smooth animations and hover states
+
+## Color Palette
+
+| Role | Color | Hex |
+|------|-------|-----|
+| Background | Near black | #0e0d0d |
+| Surface | Dark gray | #1a1918 |
+| Text | Warm cream | #e7e2de |
+| Muted text | Gray-brown | #a59e9a |
+| Accent | Warm orange | #e79641 |
+| Secondary | Deep maroon | #b6372e |
+| Border | Dark brown | #2a2826 |
+
+## Structure
+
+Next.js App Router with components:
+
+- `layout.tsx` - Root layout with fonts, metadata, glow effects
+- `page.tsx` - Homepage composition
+- `Header.tsx` - Glass-morphism navigation with pill indicators
+- `Hero.tsx` - Hero section with photo and stats
+- `Marquee.tsx` - Scrolling text element
+- `About.tsx` - Bento grid about section
+- `Career.tsx` - Timeline experience section
+- `Awards.tsx` - Appearances and accolades
+- `Footer.tsx` - Contact section
 
 ## Tech Stack
 
-- **Framework:** Next.js 16.1.1 (App Router)
-- **Language:** TypeScript
-- **UI:** React 19.2.3
-- **Styling:** Tailwind CSS v4
-- **Fonts:** Syne (display), Instrument Sans (body) via next/font
-- **Icons:** Phosphor Icons (loaded via CDN)
-- **Output:** Static export (`output: "export"` in next.config.ts)
-
-## Repository
-
-- **Remote:** https://github.com/fitzmaro/fitzmaro-site.git
-- **Branch:** main (assumed)
-
-## Project Structure
-
-```
-/Users/fitzmaro/fitzmaro-site/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx      # Root layout with fonts, metadata, global elements
-│   │   ├── page.tsx        # Homepage composition
-│   │   ├── globals.css     # Global styles
-│   │   └── favicon.ico
-│   └── components/
-│       ├── Header.tsx      # Site header/navigation
-│       ├── Hero.tsx        # Hero section
-│       ├── Marquee.tsx     # Scrolling marquee element
-│       ├── About.tsx       # About section
-│       ├── Career.tsx      # Career/experience section
-│       ├── Awards.tsx      # Awards display
-│       └── Footer.tsx      # Site footer
-├── public/                 # Static assets (SVGs)
-├── out/                    # Static build output
-├── content.json            # Site content data (bio, awards, portfolio items)
-├── next.config.ts          # Next.js config (static export, image domains)
-├── tsconfig.json           # TypeScript config (uses @/* path alias)
-├── SPEC.md                 # Design/feature specification
-└── TECHNICAL.md            # Technical decisions documentation
-```
-
-## Key Files
-
-- **content.json** - All site content: personal info, awards, portfolio projects, experience, images
-- **src/app/layout.tsx** - SEO metadata, font setup, global layout elements (noise overlay, glow effects)
-- **src/app/page.tsx** - Main page composition using all section components
-- **next.config.ts** - Static export enabled, image domains for Wix and Vimeo
+- Next.js 16.1.1 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Inter + Space Grotesk fonts via next/font
+- Phosphor Icons (CDN)
+- Static export
 
 ## Commands
 
 ```bash
-npm run dev      # Start development server (localhost:3000)
-npm run build    # Build static site to /out directory
-npm run start    # Start production server
-npm run lint     # Run ESLint
+npm run dev      # localhost:3000 (or next available port)
+npm run build    # Static build to /out
+npm run lint     # ESLint
 ```
 
-## External Content Sources
+## Version History
 
-- **Profile images:** Hosted on Wix static CDN (static.wixstatic.com)
-- **Video thumbnails:** Vimeo CDN (i.vimeocdn.com)
-- **Portfolio videos:** Embedded from Vimeo
-- **Resume:** Hosted on Dropbox (linked externally)
+- v1: `/Users/fitzmaro/fitzmaro-site` - Original (source for this version)
+- v2: `/Users/fitzmaro/fitzmaro-site-v2` - AI pitch, polished design
+- v3: `/Users/fitzmaro/fitzmaro-site-v3` - Brutalist design
+- v4: `/Users/fitzmaro/fitzmaro-site-v4` - Warm dark, editorial (this)
 
-## Design Notes
+## Design Inspiration
 
-- Dark theme with subtle animated glow spots and noise texture overlay
-- Serif font (Syne) for headers, sans-serif (Instrument Sans) for body
-- Navy blues, rosemary green, and khaki color palette
-- Smooth scroll behavior enabled
-
-## Path Alias
-
-TypeScript is configured with `@/*` mapping to `./src/*` for clean imports:
-```typescript
-import Component from "@/components/Component"
-```
+- [honglyoeng.com](https://honglyoeng.com/) - Warm dark palette, editorial feel
+- [adithyakrishnan.com](https://adithyakrishnan.com/) - Clean minimal, dark theme

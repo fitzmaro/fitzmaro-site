@@ -68,12 +68,12 @@ export default function Hero() {
         {/* Photo - Right Side */}
         <div className="lg:col-span-5 relative hidden lg:block h-[600px] opacity-0 animate-fade-in stagger-3">
           {/* Glow behind photo */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/20 to-orange-500/20 rounded-[40px] rotate-3 blur-3xl opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/30 to-amber-600/20 rounded-[40px] rotate-3 blur-3xl opacity-40"></div>
 
           {/* Photo container */}
           <div className="absolute inset-0 bg-[var(--surface)] rounded-[32px] border border-[var(--border)] overflow-hidden group shadow-2xl">
             <Image
-              src="https://static.wixstatic.com/media/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg/v1/fill/w_800,h_800,al_c/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg"
+              src="/headshot.jpg"
               alt="Fitz Maro"
               fill
               className="object-cover scale-105 group-hover:scale-110 transition-all duration-700"
@@ -102,10 +102,10 @@ export default function Hero() {
 
         {/* Mobile Photo */}
         <div className="lg:hidden relative w-full max-w-sm mx-auto aspect-square opacity-0 animate-fade-in stagger-3">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/20 to-orange-500/20 rounded-3xl rotate-3 blur-2xl opacity-30"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-[var(--accent)]/30 to-amber-600/20 rounded-3xl rotate-3 blur-2xl opacity-40"></div>
           <div className="relative w-full h-full bg-[var(--surface)] rounded-3xl border border-[var(--border)] overflow-hidden">
             <Image
-              src="https://static.wixstatic.com/media/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg/v1/fill/w_600,h_600,al_c/ae6448_90308e93577547bfac02944e55ac7ad5~mv2.jpg"
+              src="/headshot.jpg"
               alt="Fitz Maro"
               fill
               className="object-cover"
