@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Personal portfolio website for Fitz Maro, Head of North America Design Technology at Amazon's Brand Innovation Lab. This is a modern, static portfolio site replacing an older Wix site.
+Personal portfolio website for Fitz Maro, Head of the Americas, Design Technology at Amazon's Brand Innovation Lab. This is a modern, static portfolio site replacing an older Wix site.
 
 **Live domain:** fitzmaro.com
 
